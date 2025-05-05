@@ -3,7 +3,7 @@
 
 # Using ifconfig if available
 if command -v ifconfig &> /dev/null; then
-    ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 5- | grep -v "127.0.0"
+    ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 5-
 # Using ip command as alternative 
 elif command -v ip &> /dev/null; then
     ip -4 addr show | grep -Eo "inet ([0-9]*\.){3}[0-9]*" | cut -b 5-
